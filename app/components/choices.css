@@ -51,7 +51,7 @@
 
 .choice.selected {
   background-color: var(--light-blue);
-  border: none;
+  border-color: var(--purple);
 }
 
 .empty-choices {
@@ -87,8 +87,8 @@
 }
 
 .choice-buttons mwc-fab.add-remove {
-  --mdc-theme-secondary: var(--dark-gray);
-  --mdc-theme-on-secondary: var(--white);
+  --mdc-theme-secondary: var(--medium-gray);
+  --mdc-theme-on-secondary: var(--text);
 }
 
 .choice-paragraph {

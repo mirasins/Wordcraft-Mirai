@@ -77,5 +77,5 @@
   position: fixed;
   bottom: 25px;
   left: 100vw - var(--sidebar-right-width) + 30px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(32, 27, 45, 0.8);
 }

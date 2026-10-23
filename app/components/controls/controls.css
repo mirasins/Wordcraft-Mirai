@@ -8,7 +8,9 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background-color: var(--bg);
   border-radius: 2px;
   padding: 0.4em;
 }
@@ -28,7 +30,8 @@ textarea {
 }
 
 .input-control[type='range'] {
-  opacity: 0.5;
+  accent-color: var(--purple);
+  opacity: 0.8;
 }
 
 .operation-control-prefix,
@@ -70,7 +73,7 @@ textarea {
 }
 
 mwc-checkbox {
-  --mdc-checkbox-unchecked-color: var(--blue);
+  --mdc-checkbox-unchecked-color: var(--text-muted);
   --mdc-theme-secondary: var(--blue);
   margin-left: -12px;
 }

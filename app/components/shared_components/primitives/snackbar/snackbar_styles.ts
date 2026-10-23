@@ -38,20 +38,20 @@ export const style = css`
   }
 
   .mdc-snackbar.is-warning > .mdc-snackbar__surface {
-    background-color: #fdd;
-    color: red;
+    background-color: #3a1f2b;
+    color: #e96379;
   }
 
   .mdc-snackbar.is-warning * .mdc-snackbar__label {
-    color: red;
+    color: #e96379;
   }
 
   .mdc-snackbar.is-warning * slot[name='dismiss']::slotted(mwc-icon-button) {
-    color: red;
+    color: #e96379;
   }
 
   .mdc-snackbar__surface {
-    background-color: #333333;
+    background-color: #2a2438;
     min-width: 344px;
     max-width: 672px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
@@ -161,12 +161,12 @@ export const style = css`
     visibility: hidden;
   }
   .mdc-snackbar__action:not(:disabled) {
-    color: #bb86fc;
+    color: #988bc7;
   }
   .mdc-snackbar__action::before,
   .mdc-snackbar__action::after {
-    background-color: #bb86fc;
-    background-color: var(--mdc-ripple-color, #bb86fc);
+    background-color: #988bc7;
+    background-color: var(--mdc-ripple-color, #988bc7);
   }
   .mdc-snackbar__action:hover::before,
   .mdc-snackbar__action.mdc-ripple-surface--hover::before {
@@ -241,7 +241,7 @@ export const style = css`
     margin-right: 8px;
   }
   slot[name='action']::slotted(mwc-button) {
-    --mdc-theme-primary: var(--mdc-snackbar-action-color, #bb86fc);
+    --mdc-theme-primary: var(--mdc-snackbar-action-color, #988bc7);
   }
   slot[name='dismiss']::slotted(mwc-icon-button) {
     --mdc-icon-size: 18px;

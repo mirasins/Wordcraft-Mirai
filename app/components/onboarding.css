@@ -15,7 +15,7 @@ a {
 .links a {
   text-decoration: underline;
   text-transform: lowercase;
-  color: #222;
+  color: var(--text-muted);
   margin-left: 15px;
 }
 
@@ -75,8 +75,8 @@ h1 > .text {
   line-height: 1.75;
   font-family: var(--editor-font-family);
   border: 1px solid var(--light-gray);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  background: white;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  background: var(--surface);
   padding: 15px;
   cursor: pointer;
   position: relative;

@@ -6,7 +6,8 @@ body {
 }
 
 body {
-  color: #333;
+  color: #e1e1e6;
+  background-color: #191622;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +20,7 @@ body {
 }
 
 a {
-  color: rgb(0, 100, 200);
+  color: #ff79c6;
   text-decoration: none;
 }
 
@@ -28,7 +29,7 @@ a:hover {
 }
 
 a:visited {
-  color: rgb(0, 80, 160);
+  color: #988bc7;
 }
 
 label {
@@ -44,55 +45,96 @@ textarea {
   -webkit-padding: 0.4em 0;
   padding: 0.4em;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid #2f2a3e;
   border-radius: 2px;
+  color: #e1e1e6;
+  background-color: #201b2d;
 }
 
 input:disabled {
-  color: #ccc;
+  color: #5a5175;
 }
 
 button {
-  color: #333;
-  background-color: #f4f4f4;
+  color: #e1e1e6;
+  background-color: #2a2438;
   outline: none;
 }
 
 button:disabled {
-  color: #999;
+  color: #5a5175;
 }
 
 button:not(:disabled):active {
-  background-color: #ddd;
+  background-color: #3a3154;
 }
 
 body {
-  --blue: #3490dc;
-  --dark_blue: #0668b8;
-  --green: #02730a;
-  --light-blue: #d5ecff;
-  --lighter-blue: #e5f1fb;
-  --light-gray: rgb(238, 236, 236);
-  --medium-gray: #ccc;
-  --dark-gray: #999;
-  --white: #fff;
-  --gray: #ccc;
-  --gradient: linear-gradient(-15deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* Omni-inspired palette (https://github.com/getomni) */
+  --bg: #191622;
+  --surface: #201b2d;
+  --surface-raised: #2a2438;
+  --border: #2f2a3e;
+  --text: #e1e1e6;
+  --text-muted: #a39fbb;
+  --on-accent: #191622;
+  --purple: #988bc7;
+  --pink: #ff79c6;
+  --cyan: #78d1e1;
+  --yellow: #e7de79;
+  --orange: #e89e64;
+  --red: #e96379;
+
+  --blue: var(--purple);
+  --dark_blue: var(--pink);
+  --green: #67e480;
+  --light-blue: #3a3154;
+  --lighter-blue: #2c2640;
+  --light-gray: var(--border);
+  --medium-gray: #5a5175;
+  --dark-gray: #8f8aa8;
+  --white: var(--bg);
+  --black: var(--text);
+  --gray: var(--border);
+  --gradient: linear-gradient(-15deg, #ff79c6, #988bc7, #78d1e1, #67e480);
   --loop-gradient: linear-gradient(
     75deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab,
-    #23a6d5,
-    #e73c7e,
-    #ee7752
+    #ff79c6,
+    #988bc7,
+    #78d1e1,
+    #67e480,
+    #78d1e1,
+    #988bc7,
+    #ff79c6
   );
   --default-font-family: Helvetica Neue;
   --editor-font-family: 'Merriweather', serif;
   --sidebar-left-width: 400px;
   --sidebar-right-width: 450px;
-  --text-selection: rgb(178, 216, 252);
+  --text-selection: #44395f;
+
+  /* Material web components */
+  --mdc-theme-primary: var(--purple);
+  --mdc-theme-secondary: var(--purple);
+  --mdc-theme-on-primary: var(--on-accent);
+  --mdc-theme-on-secondary: var(--on-accent);
+  --mdc-theme-surface: var(--surface);
+  --mdc-theme-on-surface: var(--text);
+  --mdc-theme-background: var(--bg);
+  --mdc-theme-text-primary-on-background: var(--text);
+  --mdc-dialog-heading-ink-color: var(--text);
+  --mdc-dialog-content-ink-color: var(--text);
+  --mdc-dialog-scrim-color: rgba(10, 8, 15, 0.7);
+  --mdc-tab-text-label-color-default: var(--text-muted);
+  --mdc-tab-color-default: var(--text-muted);
+  --mdc-checkbox-unchecked-color: var(--text-muted);
+  --mdc-checkbox-ink-color: var(--on-accent);
 
   font-family: var(--default-font-family);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background-color: var(--text-selection);
 }

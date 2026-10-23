@@ -7,7 +7,8 @@
 
 #sidebar-left {
   width: var(--sidebar-left-width);
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
   overflow: hidden;
   text-align: left;
   display: flex;
@@ -28,19 +29,20 @@
   position: absolute;
   height: 100%;
   z-index: 12;
-  background: white;
+  background: var(--bg);
 }
 
 #sidebar-right {
   overflow: hidden;
   width: var(--sidebar-right-width);
-  border-left: 1px solid #ddd;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
   text-align: left;
 }
 
 .editor-overlay {
   position: absolute;
-  background: white;
+  background: var(--bg);
   top: 0;
   width: 100%;
   height: 100%;

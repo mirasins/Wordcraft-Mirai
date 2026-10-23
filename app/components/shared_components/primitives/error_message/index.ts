@@ -37,8 +37,8 @@ export class ErrorMessageComponent extends MobxLitElement {
         flex-direction: row;
         align-items: center;
         margin-top: 20px;
-        color: red;
-        background-color: #fdd;
+        color: #e96379;
+        background-color: #3a1f2b;
         font-size: var(--mdc-typography-body2-font-size, 0.875rem);
         -webkit-font-smoothing: antialiased;
         line-height: var(--mdc-typography-body2-line-height, 1.25rem);

@@ -18,7 +18,7 @@
 
 span.key-command {
   padding: 8px;
-  color: black;
+  color: var(--cyan);
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
   overflow: auto;
@@ -32,7 +32,7 @@ span.key-command {
 }
 
 span.key-command-small {
-  color: black;
+  color: var(--cyan);
   padding: 4px;
   font-size: 70%;
 }
