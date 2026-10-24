@@ -19,6 +19,7 @@
 import '@material/mwc-tab';
 import '@material/mwc-tab-bar';
 import '@components/shared_components/primitives/error_message';
+import './agent';
 import './chat';
 import './operations';
 import './operation_controls';
@@ -63,14 +64,29 @@ export class SidebarComponent extends MobxLitElement {
     StarredResultsService
   );
 
+  /**
+   * activeSidebarTabIndex stores a stable tab id (0 controls, 1 chat,
+   * 2 starred, 3 agents), independent of which optional tabs are visible.
+   */
+  private getVisibleTabIds(): number[] {
+    const ids = [0];
+    if (this.modelService.hasDialogModel) ids.push(1);
+    if (this.starredResultsService.shouldShowStarredTab) ids.push(2);
+    ids.push(3);
+    return ids;
+  }
+
   private onTabActivated(event: CustomEvent<{index: number}>) {
-    const index = event.detail.index;
-    this.appService.activeSidebarTabIndex = index;
+    const id = this.getVisibleTabIds()[event.detail.index];
+    if (id !== undefined) {
+      this.appService.activeSidebarTabIndex = id;
+    }
   }
 
   override render() {
     const {activeSidebarTabIndex} = this.appService;
-    const noPadding = activeSidebarTabIndex === 1;
+    const noPadding =
+      activeSidebarTabIndex === 1 || activeSidebarTabIndex === 3;
 
     const sidebarClasses = classMap({
       'sidebar-contents': true,
@@ -84,7 +100,11 @@ export class SidebarComponent extends MobxLitElement {
   }
 
   renderTabBar() {
-    const {activeSidebarTabIndex} = this.appService;
+    const visibleIds = this.getVisibleTabIds();
+    const activePosition = Math.max(
+      0,
+      visibleIds.indexOf(this.appService.activeSidebarTabIndex)
+    );
     const {starredResults, shouldShowStarredTab} = this.starredResultsService;
     const nStarred = starredResults.length;
 
@@ -111,11 +131,12 @@ export class SidebarComponent extends MobxLitElement {
     return html`
       <mwc-tab-bar
         class=${tabClasses}
-        activeIndex=${activeSidebarTabIndex}
+        activeIndex=${activePosition}
         @MDCTabBar:activated=${this.onTabActivated}
       >
         <mwc-tab icon="auto_awesome" label="Controls"></mwc-tab>
         ${renderChatTab()} ${renderStarTab()}
+        <mwc-tab icon="smart_toy" label="Agentes"></mwc-tab>
       </mwc-tab-bar>
     `;
   }
@@ -131,6 +152,9 @@ export class SidebarComponent extends MobxLitElement {
     }
     if (tabIndex === 2) {
       return html`<wordcraft-starred-choices></wordcraft-starred-choices>`;
+    }
+    if (tabIndex === 3) {
+      return html`<wordcraft-agent></wordcraft-agent>`;
     }
 
     return html``;

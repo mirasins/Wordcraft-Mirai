@@ -16,6 +16,7 @@
  * limitations under the License.
  * ==============================================================================
  */
+import {AgentService} from './agent_service';
 import {AppService} from './app_service';
 import {ChatService} from './chat_service';
 import {ConfigService} from './config_service';
@@ -37,6 +38,7 @@ import {StatusService} from './status_service';
 import {TextEditorService} from './text_editor_service';
 
 export {
+  AgentService,
   AppService,
   ChatService,
   ConfigService,

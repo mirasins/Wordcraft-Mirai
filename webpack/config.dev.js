@@ -34,6 +34,7 @@ module.exports = {
   devServer: {
     static: shared.resolveDir('../app/static'),
     port: 3000,
+    proxy: [{context: ['/api/agent'], target: 'http://127.0.0.1:3210', changeOrigin: true}],
     // https: true,
   },
   optimization: {

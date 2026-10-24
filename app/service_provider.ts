@@ -19,6 +19,7 @@
 
 // Core Services
 import {WordcraftCore} from '@core/wordcraft_core';
+import {AgentService} from '@services/agent_service';
 import {AppService} from '@services/app_service';
 import {ChatService} from '@services/chat_service';
 import {ConfigService} from '@services/config_service';
@@ -44,6 +45,9 @@ import {TextEditorService} from '@services/text_editor_service';
  */
 export function makeServiceProvider(self: WordcraftCore) {
   const serviceProvider = {
+    get agentService() {
+      return self.getService(AgentService);
+    },
     get appService() {
       return self.getService(AppService);
     },

@@ -52,6 +52,31 @@ You can find more information about the Gemini API at
 
 # 🤖 App
 
+## Agente integrado (Rust + MCP)
+
+La pestaña **Agentes** incorpora una conversación con Claude dentro de Wordcraft.
+El runtime Rust utiliza Claude Code con tu cuenta de Claude y permite al
+agente consultar una instantánea del documento mediante MCP. Esta primera versión
+es de lectura: las respuestas no modifican automáticamente el editor.
+
+Instala [Claude Code](https://code.claude.com/docs/en/setup) y autentícate con una
+cuenta con acceso a Claude Code (por ejemplo, Pro o Max). En PowerShell:
+
+```powershell
+claude auth login
+cargo run --manifest-path agent-runtime/Cargo.toml
+```
+
+En otra terminal ejecuta `npm run dev` y abre **Agentes** en el editor. El servidor
+de desarrollo reenvía `/api/agent` al runtime en `127.0.0.1:3210`. Una instalación
+de producción requiere configurar ese mismo enrutamiento en su servidor web.
+El inicio de sesión lo gestiona el cliente oficial Claude Code; Wordcraft no
+recoge contraseñas ni tokens de tu cuenta. No utiliza las credenciales de
+OpenCode/Copilot. Las funciones Gemini existentes mantienen su configuración
+independiente.
+
+Consulta [el runtime](agent-runtime/README.md) para detalles y pruebas.
+
 Wordcraft can be customized by adding additional models or adding
 operations/controls. The basic architecture allows for a great deal of
 flexibility in the

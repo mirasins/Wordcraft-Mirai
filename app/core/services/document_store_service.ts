@@ -219,6 +219,7 @@ export class DocumentStoreService extends Service {
 }
 
 decorate(DocumentStoreService, {
+  documentId: observable,
   isDeleting: observable,
   isLoading: observable,
   isSaving: observable,
